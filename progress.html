@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Progressingiz — Kibersavod</title>
+<meta name="description" content="Necha dars tugallanganini, necha amaliy topshiriq bajarilganini va test natijalaringizni bir joyda ko'ring." />
+<link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Asosiy mazmunga o'tish</a>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a class="brand" href="./index.html">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L3 5.5V11C3 16.25 6.84 21.16 12 22C17.16 21.16 21 16.25 21 11V5.5L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12.2L10.7 14.4L15.5 9.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand-text-full">Kibersavod</span>
+    </a>
+    <button class="icon-btn nav-toggle" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="site-nav">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Asosiy navigatsiya">
+      <a href="./index.html">Bosh sahifa</a>
+      <a href="./darslar.html">Darslar</a>
+      <a href="./test.html">Baholash</a>
+      <a href="./progress.html" aria-current="page">Progress</a>
+      <a href="./lugat.html">Lug'at</a>
+      <a href="./resurslar.html">Resurslar</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Qorong'i rejimga o'tish" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5V5M12 19V21.5M4.2 4.2L6 6M18 18L19.8 19.8M2.5 12H5M19 12H21.5M4.2 19.8L6 18M18 6L19.8 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" data-global-progress-fill></div></div>
+</header>
+
+<main id="main">
+
+  <section class="section">
+    <div class="container container--narrow">
+
+      <div class="section-head">
+        <h1>Sizning progressingiz</h1>
+        <p class="text-soft">Barcha ma'lumot faqat shu qurilmangiz xotirasida saqlanadi — hech qayerga yuborilmaydi.</p>
+      </div>
+
+      <div class="metric-grid" id="metricGrid"></div>
+
+      <h2>Darslar bo'yicha holat</h2>
+      <div class="progress-lesson-list" id="lessonList"></div>
+
+      <h2>Fishing-trenajyor</h2>
+      <div class="progress-summary-card" id="phishSummary"></div>
+
+      <h2>Yakuniy baholash</h2>
+      <div class="progress-summary-card" id="testSummary"></div>
+
+      <div class="progress-reset">
+        <button class="btn btn-outline" id="resetBtn">Progressni butunlay tozalash</button>
+        <p class="text-soft" style="margin-top:0.6rem;font-size:0.85rem;">Bu amal barcha dars, topshiriq va test natijalaringizni o'chirib tashlaydi va qaytarib bo'lmaydi.</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 Kibersavod. Aholi kibersavodxonligini oshirishga qaratilgan bepul ta'lim loyihasi.</p>
+    <nav aria-label="Qo'shimcha havolalar">
+      <a href="./resurslar.html">Foydali havolalar</a>
+      <a href="./lugat.html">Atamalar lug'ati</a>
+      <a href="./test.html">Yakuniy baholash</a>
+    </nav>
+    <p class="footer-note">Bu sayt hech qanday shaxsiy ma'lumotingizni serverga yubormaydi yoki yig'maydi.</p>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var LESSONS = [
+      { id: 1, title: "Kiberxavfsizlik nima va nega har bir insonga kerak", tasks: 4 },
+      { id: 2, title: "Kuchli parol va parol menejeri", tasks: 5 },
+      { id: 3, title: "Ikki bosqichli autentifikatsiya (2FA)", tasks: 5 },
+      { id: 4, title: "Fishing: soxta xat, SMS va saytlarni tanish", tasks: 4 },
+      { id: 5, title: "Ijtimoiy muhandislik va telefon firibgarligi", tasks: 4 },
+      { id: 6, title: "Bank kartalari va onlayn to'lov xavfsizligi", tasks: 4 },
+      { id: 7, title: "Telegram, Instagram, Facebook akkauntini himoyalash", tasks: 4 },
+      { id: 8, title: "Shaxsiy ma'lumotlar va raqamli iz", tasks: 4 },
+      { id: 9, title: "Zararli dasturlar, viruslar va to'lov talab qiluvchi dasturlar", tasks: 4 },
+      { id: 10, title: "Ommaviy Wi-Fi, VPN va uy routeri xavfsizligi", tasks: 4 },
+      { id: 11, title: "Bolalar va o'smirlar uchun internet xavfsizligi", tasks: 4 },
+      { id: 12, title: "Hodisa yuz berganda: nima qilish va qayerga murojaat qilish", tasks: 4 }
+    ];
+
+    function renderAll() {
+      var state = KiberApp.Storage.getState();
+
+      var lessonsDone = KiberApp.Progress.computeLessonsCompleted();
+      var lessonsPercent = KiberApp.Progress.computePercent();
+      var tasksInfo = KiberApp.Progress.computeTasksDone();
+      var tasksPercent = Math.round((tasksInfo.done / tasksInfo.total) * 100);
+
+      var metricGrid = document.getElementById("metricGrid");
+      metricGrid.innerHTML =
+        '<div class="metric-card"><strong>' + lessonsDone + " / 12</strong><span>dars tugallandi (" + lessonsPercent + "%)</span></div>" +
+        '<div class="metric-card"><strong>' + tasksInfo.done + " / " + tasksInfo.total + "</strong><span>amaliy topshiriq bajarildi (" + tasksPercent + "%)</span></div>";
+
+      var lessonList = document.getElementById("lessonList");
+      lessonList.innerHTML = "";
+      LESSONS.forEach(function (lesson) {
+        var lessonState = state.lessons[String(lesson.id)];
+        var completed = !!(lessonState && lessonState.completed);
+        var tasksDone = 0;
+        if (lessonState && lessonState.tasks) {
+          Object.keys(lessonState.tasks).forEach(function (t) {
+            if (lessonState.tasks[t]) tasksDone++;
+          });
+        }
+
+        var row = document.createElement("a");
+        row.className = "progress-lesson-row";
+        row.href = "./dars-" + lesson.id + ".html";
+        row.innerHTML =
+          '<span class="progress-lesson-row__num">' + lesson.id + "-dars</span>" +
+          '<span class="progress-lesson-row__title">' + lesson.title + "</span>" +
+          '<span class="progress-lesson-row__tasks">' + tasksDone + " / " + lesson.tasks + " topshiriq</span>" +
+          '<span class="badge ' + (completed ? "badge-green" : "badge-amber") + '">' + (completed ? "Tugallandi" : "Boshlanmagan") + "</span>";
+        lessonList.appendChild(row);
+      });
+
+      var phishResult = KiberApp.Storage.getPhishingResult();
+      var phishSummary = document.getElementById("phishSummary");
+      if (phishResult) {
+        phishSummary.innerHTML =
+          "<p class=\"mt-0\"><strong>Natija: " + phishResult.correct + " / " + phishResult.total + "</strong> to'g'ri aniqlandi.</p>" +
+          '<p class="text-soft" style="margin:0;">Sana: ' + new Date(phishResult.date).toLocaleString() + "</p>";
+      } else {
+        phishSummary.innerHTML =
+          '<p class="mt-0">Hali bajarilmagan. <a href="./dars-4.html">4-darsdagi fishing-trenajyorni sinab ko\'ring</a>.</p>';
+      }
+
+      var testResult = KiberApp.Storage.getFinalTest();
+      var testSummary = document.getElementById("testSummary");
+      if (testResult) {
+        testSummary.innerHTML =
+          '<p class="mt-0"><strong>Kibersavodxonlik indeksi: ' + testResult.score + " / 100</strong> — Daraja: " + testResult.level + "</p>" +
+          '<p class="text-soft" style="margin:0 0 0.8rem;">Sana: ' + new Date(testResult.date).toLocaleString() + "</p>" +
+          '<a class="btn btn-outline" href="./test.html">Qayta topshirish</a>';
+      } else {
+        testSummary.innerHTML =
+          '<p class="mt-0">Hali topshirilmagan. <a href="./test.html">Yakuniy baholashga o\'ting</a>.</p>';
+      }
+    }
+
+    renderAll();
+
+    document.getElementById("resetBtn").addEventListener("click", function () {
+      var confirmed = window.confirm("Rostdan ham barcha progressni o'chirib tashlamoqchimisiz? Bu amalni qaytarib bo'lmaydi.");
+      if (!confirmed) return;
+      KiberApp.Storage.resetAll();
+      renderAll();
+    });
+  });
+</script>
+</body>
+</html>

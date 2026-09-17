@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>10-dars: Ommaviy Wi-Fi, VPN va uy routeri xavfsizligi — Kibersavod</title>
+<meta name="description" content="Kafe yoki bekatdagi bepul Wi-Fi'dan xavfsiz foydalanish va uy routeringizni to'g'ri sozlash qoidalari." />
+<link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Asosiy mazmunga o'tish</a>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a class="brand" href="./index.html">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L3 5.5V11C3 16.25 6.84 21.16 12 22C17.16 21.16 21 16.25 21 11V5.5L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12.2L10.7 14.4L15.5 9.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand-text-full">Kibersavod</span>
+    </a>
+    <button class="icon-btn nav-toggle" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="site-nav">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Asosiy navigatsiya">
+      <a href="./index.html">Bosh sahifa</a>
+      <a href="./darslar.html" aria-current="page">Darslar</a>
+      <a href="./test.html">Baholash</a>
+      <a href="./lugat.html">Lug'at</a>
+      <a href="./resurslar.html">Resurslar</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Qorong'i rejimga o'tish" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5V5M12 19V21.5M4.2 4.2L6 6M18 18L19.8 19.8M2.5 12H5M19 12H21.5M4.2 19.8L6 18M18 6L19.8 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" data-global-progress-fill></div></div>
+</header>
+
+<main id="main">
+
+  <section class="lesson-hero">
+    <div class="container">
+      <p class="lesson-eyebrow">10-dars / 12</p>
+      <h1>Ommaviy Wi-Fi, VPN va uy routeri xavfsizligi</h1>
+      <ul class="objectives-list">
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Ommaviy Wi-Fi xavflarini tushunasiz</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>VPN nima va qachon foydali ekanini bilasiz</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Uy routeringizni xavfsiz sozlashni o'rganasiz</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Ommaviy tarmoqda nimalardan saqlanish kerakligini bilasiz</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="lesson-body">
+
+        <h2>Ommaviy Wi-Fi nega xavfli bo'lishi mumkin</h2>
+        <p>Kafe, bekat, mehmonxona yoki savdo markazidagi bepul Wi-Fi qulay, ammo ba'zi xavflarni o'zida yashiradi. Ochiq (parolsiz yoki umumiy parolli) tarmoqda sizning internet trafikingizni bir xil tarmoqdagi boshqa odam texnik jihatdan kuzatishi mumkin — bu ayniqsa shifrlanmagan (https bo'lmagan) saytlarga kirganda xavfli.</p>
+        <p>Bundan tashqari, "evil twin" deb ataladigan usul mavjud — firibgar haqiqiy tarmoqqa o'xshash nomli (masalan, "Aeroport_Free_WiFi") soxta hotspot yaratadi. Siz shu soxta tarmoqqa ulanganingizda, sizning barcha internet trafikingiz to'g'ridan-to'g'ri firibgar orqali o'tadi.</p>
+
+        <h2>Ommaviy Wi-Fi'da nima qilish tavsiya etilmaydi</h2>
+        <p>Ommaviy Wi-Fi orqali bank ilovasiga kirish, to'lov amalga oshirish yoki muhim parollarni kiritishdan saqlaning. Agar zaruriyat bo'lsa, buning o'rniga mobil internetdan (o'z operatoringiz tarmog'idan) foydalanish ancha xavfsizroq, chunki u shifrlangan va faqat sizga tegishli.</p>
+
+        <h2>VPN nima va u qanday yordam beradi</h2>
+        <p>VPN (Virtual Private Network) — internet trafikingizni shifrlab, uni xavfsiz "tunnel" orqali o'tkazuvchi xizmat. Ishonchli VPN ishlatilganda, hatto ommaviy Wi-Fi'da bo'lsangiz ham, sizning trafikingizni o'sha tarmoqdagi boshqalar ko'ra olmaydi. Biroq, muhim ogohlantirish: VPN xizmatining o'zi ham sizning trafikingizni ko'radi, shuning uchun faqat tanilgan, ishonchli va yaxshi sharhlarga ega VPN xizmatlaridan foydalanish kerak — notanish, "bepul" VPN ilovalari ba'zan aksincha, sizning ma'lumotlaringizni yig'ish uchun yaratilgan bo'lishi mumkin.</p>
+
+        <h2>Uy routerini xavfsiz sozlash</h2>
+        <p>Ko'pchilik uy routeri sotib olingan paytda standart (hammaga ma'lum) admin login va parol bilan keladi. Agar buni almashtirmasangiz, tarmog'ingizga yaqin atrofdagi har qanday odam kirishga urinishi mumkin. Quyidagilarni tekshiring:</p>
+        <ul>
+          <li>Router administrator panelidagi standart parolni kuchli, noyob parolga almashtiring.</li>
+          <li>Wi-Fi tarmog'ingiz uchun ham kuchli parol o'rnating (2-darsda o'rgangan qoidalarga amal qiling).</li>
+          <li>Router dasturiy ta'minotini (firmware) muntazam yangilab turing.</li>
+          <li>Agar kerak bo'lmasa, routerning masofadan boshqarish (remote management) funksiyasini o'chirib qo'ying.</li>
+        </ul>
+
+        <h3>Hayotiy misol</h3>
+        <div class="example-box">
+          <p><strong>Vaziyat:</strong> Sardor aka aeroportda parvozini kutayotib, telefonida "Airport_Free_WiFi_5G" nomli ochiq tarmoqni topadi va unga ulanadi.</p>
+          <p>Vaqtni o'tkazish uchun u bank ilovasini ochib, balansini tekshiradi. Bir necha kundan so'ng, hisobidan notanish tranzaksiyalar amalga oshirilganini payqaydi.</p>
+          <p class="text-soft">Bu tarmoq aslida aeroportning rasmiy Wi-Fi'siga o'xshash nomdagi soxta hotspot bo'lgan bo'lishi mumkin. Ommaviy joyda bank ilovasiga kirishdan saqlanish yoki mobil internetdan foydalanish bunday xavfni oldini olar edi.</p>
+        </div>
+
+        <h3>Xato qilmang</h3>
+        <div class="mistake-box">
+          <p><strong>Eng ko'p uchraydigan 5 ta xato:</strong></p>
+          <ol>
+            <li>Ommaviy Wi-Fi orqali bank ilovasi yoki to'lov saytiga kirish.</li>
+            <li>Router admin panelining standart parolini almashtirmaslik.</li>
+            <li>Tanish nomga o'xshab ko'ringan har qanday "ochiq" Wi-Fi tarmog'iga ishonib ulanish.</li>
+            <li>Uy Wi-Fi parolini juda oddiy yoki umuman qo'ymaslik.</li>
+            <li>Router firmware yangilanishlarini e'tiborsiz qoldirish.</li>
+          </ol>
+        </div>
+
+        <h3>Amaliy topshiriqlar</h3>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="router-parol-almashtirish" data-lesson-id="10" />
+            <span>1. Uy routeringiz admin parolini standart holatdan almashtiring</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> tarmog'ingizga ruxsatsiz kirishning oldini olish.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> router sozlamalar sahifasiga kirib (odatda 192.168.1.1 yoki router pasidagi manzil orqali), admin parolini yangilang.</p>
+        </div>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="wifi-parol-kuchli" data-lesson-id="10" />
+            <span>2. Wi-Fi tarmog'ingiz uchun kuchli parol o'rnating</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> uy tarmog'ingizni notanish odamlardan himoyalash.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> router sozlamalarida Wi-Fi parolini 2-darsda o'rgangan qoidalarga mos ravishda yangilang.</p>
+        </div>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="ommaviy-wifi-odat" data-lesson-id="10" />
+            <span>3. Ommaviy joylarda mobil internetdan foydalanishni odat qiling</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> bank yoki muhim ma'lumotlarni ochiq tarmoqda ishlatmaslik.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> kafe yoki bekatda muhim ilovalarga kirish kerak bo'lsa, Wi-Fi o'rniga mobil internetni yoqing.</p>
+        </div>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="router-firmware-yangilash" data-lesson-id="10" />
+            <span>4. Router firmware yangilanishini tekshiring</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> ma'lum xavfsizlik zaifliklarini yopish.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> router sozlamalaridan "Firmware yangilash" bo'limini toping va mavjud yangilanishlarni o'rnating.</p>
+        </div>
+
+        <h3>Mustahkamlash testi</h3>
+        <div id="quiz10"></div>
+
+        <div class="lesson-complete-note" data-lesson-complete-note hidden>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Ushbu dars tugallandi deb belgilandi. Progressingiz saqlandi.
+        </div>
+
+      </article>
+
+      <nav class="lesson-nav" aria-label="Darslar orasida o'tish">
+        <a class="btn btn-outline" href="./dars-9.html">← Oldingi dars</a>
+        <a class="btn btn-primary" href="./dars-11.html">Keyingi dars: Bolalar xavfsizligi →</a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 Kibersavod. Aholi kibersavodxonligini oshirishga qaratilgan bepul ta'lim loyihasi.</p>
+    <nav aria-label="Qo'shimcha havolalar">
+      <a href="./resurslar.html">Foydali havolalar</a>
+      <a href="./lugat.html">Atamalar lug'ati</a>
+      <a href="./test.html">Yakuniy baholash</a>
+    </nav>
+    <p class="footer-note">Bu sayt hech qanday shaxsiy ma'lumotingizni serverga yubormaydi yoki yig'maydi.</p>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    KiberApp.Quiz.init(document.getElementById("quiz10"), "10", [
+      {
+        q: "\"Evil twin\" firibgarligi nima?",
+        options: [
+          "Kompyuter virusining turi",
+          "Firibgar tomonidan yaratilgan, haqiqiy tarmoqqa o'xshash nomli soxta Wi-Fi hotspot",
+          "Router modelining nomi",
+          "VPN xizmati turi"
+        ],
+        correct: 1,
+        explain: "Foydalanuvchi soxta hotspotga ulanganda, uning trafigi firibgar orqali o'tadi."
+      },
+      {
+        q: "Ommaviy Wi-Fi orqali nima qilishdan saqlanish tavsiya etiladi?",
+        options: [
+          "Xabar o'qish",
+          "Bank ilovasiga kirish yoki to'lov qilish",
+          "Yangiliklar sayti ochish",
+          "Ob-havo dasturidan foydalanish"
+        ],
+        correct: 1,
+        explain: "Moliyaviy operatsiyalar ommaviy tarmoqda ancha xavfli, chunki trafik kuzatilishi mumkin."
+      },
+      {
+        q: "VPN nima vazifani bajaradi?",
+        options: [
+          "Internetni tezlashtiradi",
+          "Internet trafikingizni shifrlab, xavfsiz o'tkazadi",
+          "Batareyani tejaydi",
+          "Wi-Fi parolini eslab qoladi"
+        ],
+        correct: 1,
+        explain: "VPN trafikni shifrlaydi, biroq faqat ishonchli VPN xizmatidan foydalanish muhim."
+      },
+      {
+        q: "Uy routeri admin parolini almashtirmaslik nega xavfli?",
+        options: [
+          "Bu hech qanday xavf tug'dirmaydi",
+          "Standart parol ko'pchilikka ma'lum bo'lgani uchun tarmog'ingizga ruxsatsiz kirish osonlashadi",
+          "Bu internetni sekinlashtiradi",
+          "Faqat estetik muammo"
+        ],
+        correct: 1,
+        explain: "Standart parollar internetda ochiq ma'lum, shuning uchun ularni almashtirish zarur."
+      },
+      {
+        q: "Ishonchli bo'lmagan \"bepul\" VPN ilovalari haqida nima deyish mumkin?",
+        options: [
+          "Ular har doim to'liq xavfsiz",
+          "Ular ba'zan foydalanuvchi ma'lumotlarini yig'ish uchun yaratilgan bo'lishi mumkin",
+          "Ular hech qachon ishlatilmasligi kerak",
+          "Ular davlat tomonidan tekshiriladi"
+        ],
+        correct: 1,
+        explain: "Notanish, tekshirilmagan VPN xizmatlari sizning trafikingizni ko'rishi va undan noto'g'ri maqsadda foydalanishi mumkin."
+      }
+    ]);
+  });
+</script>
+</body>
+</html>
