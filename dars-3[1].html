@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>3-dars: Ikki bosqichli autentifikatsiya (2FA) — Kibersavod</title>
+<meta name="description" content="2FA nima, uning turlari va Telegram, email, Instagram akkauntlaringizda uni qanday yoqishni o'rganing." />
+<link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Asosiy mazmunga o'tish</a>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a class="brand" href="./index.html">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L3 5.5V11C3 16.25 6.84 21.16 12 22C17.16 21.16 21 16.25 21 11V5.5L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12.2L10.7 14.4L15.5 9.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand-text-full">Kibersavod</span>
+    </a>
+    <button class="icon-btn nav-toggle" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="site-nav">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Asosiy navigatsiya">
+      <a href="./index.html">Bosh sahifa</a>
+      <a href="./darslar.html" aria-current="page">Darslar</a>
+      <a href="./test.html">Baholash</a>
+      <a href="./progress.html">Progress</a>
+      <a href="./lugat.html">Lug'at</a>
+      <a href="./resurslar.html">Resurslar</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Qorong'i rejimga o'tish" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5V5M12 19V21.5M4.2 4.2L6 6M18 18L19.8 19.8M2.5 12H5M19 12H21.5M4.2 19.8L6 18M18 6L19.8 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" data-global-progress-fill></div></div>
+</header>
+
+<main id="main">
+
+  <section class="lesson-hero">
+    <div class="container">
+      <p class="lesson-eyebrow">3-dars / 12</p>
+      <h1>Ikki bosqichli autentifikatsiya (2FA)</h1>
+      <ul class="objectives-list">
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2FA nima va u parolni qanday to'ldirishini tushunasiz</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2FA turlarini va qaysi biri xavfsizroq ekanini bilasiz</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Eng muhim hisoblaringizda 2FA'ni qanday yoqishni o'rganasiz</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2FA kodi bilan bog'liq firibgarlik usulini tanishni bilasiz</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="lesson-body">
+
+        <h2>2FA nima — oddiy tushuntirish</h2>
+        <p>Ikki bosqichli autentifikatsiya (2FA — Two-Factor Authentication) — bu hisobingizga kirish uchun parolga qo'shimcha ravishda ikkinchi tasdiqlash qadamini talab qiluvchi xavfsizlik usuli. Parolni "bilasiz", ikkinchi qadamni esa odatda faqat siz "egalik qilasiz" — masalan, telefoningizga kelgan kod yoki maxsus ilovadagi raqam.</p>
+        <p>Buni uy eshigi bilan taqqoslash mumkin: parol — bu oddiy qulf, 2FA esa — qo'shimcha zanjir yoki ikkinchi qulf. Hatto kimdir birinchi qulfning kalitini (parolni) topib olsa ham, ikkinchisisiz ichkariga kira olmaydi.</p>
+
+        <h2>Nega faqat parol yetarli emas</h2>
+        <p>Parollar, qanchalik kuchli bo'lmasin, turli yo'llar bilan o'g'irlanishi mumkin — fishing sayt orqali, ma'lumotlar sizib chiqishi orqali yoki oddiygina kimdir yelkangizdan qarab turib. Agar hisobingizda faqat parol himoyasi bo'lsa, parol qo'lga tushishi bilan hisobingiz to'liq boshqa birovning qo'liga o'tadi.</p>
+        <p>2FA yoqilgan bo'lsa, firibgar parolingizni bilsa ham, ikkinchi qadamsiz (masalan, telefoningizdagi kod) hisobingizga kira olmaydi. Aynan shu sababli 2FA — eng arzon, ammo eng samarali himoya usullaridan biri hisoblanadi.</p>
+
+        <h2>2FA turlari</h2>
+        <p><strong>1. SMS orqali kod.</strong> Eng keng tarqalgan usul — tizimga kirishda telefon raqamingizga bir martalik kod keladi. Qulay, ammo SIM karta almashtirish firibgarligi (pastda tushuntiriladi) tufayli eng zaif variant hisoblanadi.</p>
+        <p><strong>2. Autentifikatsiya ilovasi orqali kod.</strong> Telefoningizga o'rnatilgan maxsus ilova (masalan, Google Authenticator turidagi ilovalar) har 30 soniyada yangilanadigan kod ko'rsatadi. Bu usul SMS'ga qaraganda xavfsizroq, chunki kod internetga yuborilmaydi va telefon raqamingizga bog'liq emas.</p>
+        <p><strong>3. Fizik xavfsizlik kaliti.</strong> USB yoki simsiz kalit — eng xavfsiz, lekin oddiy foydalanuvchi uchun unchalik keng tarqalmagan usul.</p>
+        <p>Agar tanlov bo'lsa, ilova orqali kodni SMS'dan afzal ko'ring. Ammo hech qanday 2FA — umuman 2FA yo'qligidan yaxshiroq.</p>
+
+        <h2>SIM karta almashtirish firibgarligi (SIM swap)</h2>
+        <p>Ba'zan firibgarlar sizning shaxsiy ma'lumotlaringizdan foydalanib, mobil operator orqali telefon raqamingizni o'z SIM kartasiga "ko'chirishga" harakat qiladi. Agar bu muvaffaqiyatli bo'lsa, sizga kelishi kerak bo'lgan barcha SMS kodlar ularga boradi — shu jumladan 2FA kodlari ham. Shuning uchun faqat SMS'ga tayanish to'liq xavfsizlikni kafolatlamaydi va imkon qadar ilova orqali 2FA'ga o'tish tavsiya etiladi.</p>
+
+        <h2>Zaxira kodlar haqida</h2>
+        <p>2FA yoqqaningizda ko'pchilik xizmatlar sizga bir marotaba ishlatiladigan zaxira kodlar (backup codes) beradi — bular telefoningiz yo'qolgan yoki ishlamay qolgan holatda hisobingizga kirish uchun kerak bo'ladi. Bu kodlarni ekran suratini olib, xavfsiz joyda (masalan, parol menejerida yoki qog'ozda, uyda ko'zdan yiroq joyda) saqlab qo'yish muhim — aks holda telefoningiz muammosi tufayli o'z hisobingizdan mahrum bo'lib qolishingiz mumkin.</p>
+
+        <h3>Hayotiy misol</h3>
+        <div class="example-box">
+          <p><strong>Vaziyat:</strong> Dilnoza opaga notanish raqamdan Telegram orqali xabar keladi:</p>
+          <p><em>— Salom, men adashib sizga tasdiqlash kodini yubordim, iltimos menga qaytarib yuboring, bo'lmasa akkauntim bloklanadi 🙏</em></p>
+          <p>Aslida bu kod — Dilnoza opaning o'z Telegram akkauntiga kirish uchun yuborilgan haqiqiy 2FA kodi. Agar u shu kodni "yordam berish" niyatida yuborsa, firibgar aynan shu kod yordamida uning akkauntiga kirib oladi.</p>
+          <p class="text-soft">Qoida oddiy: sizga kelgan tasdiqlash kodini hech kimga, hech qanday sababga ko'ra yubormang — hatto "tanish" yoki "muhtoj" ko'ringan odamga ham.</p>
+        </div>
+
+        <h3>Xato qilmang</h3>
+        <div class="mistake-box">
+          <p><strong>Eng ko'p uchraydigan 5 ta xato:</strong></p>
+          <ol>
+            <li>Tasdiqlash kodini boshqa birovga, hatto tanish ko'ringan odamga ham aytib berish.</li>
+            <li>Zaxira kodlarni hech qayerga yozib qo'ymaslik.</li>
+            <li>Faqat SMS kodga tayanib, SIM swap xavfini hisobga olmaslik.</li>
+            <li>2FA'ni faqat bitta "muhim" hisobda yoqib, qolganlarini unutish.</li>
+            <li>"Bu meni sekinlashtiradi" deb 2FA'ni umuman yoqmaslik.</li>
+          </ol>
+        </div>
+
+        <h3>Amaliy topshiriqlar</h3>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="telegram-2fa" data-lesson-id="3" />
+            <span>1. Telegram'da Two-Step Verification'ni yoqing</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> eng ko'p ishlatiladigan akkauntingizni himoyalash.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> Telegram → Sozlamalar (Settings) → Maxfiylik va xavfsizlik (Privacy and Security) → Two-Step Verification'ni yoqing va qo'shimcha parol o'rnating.</p>
+        </div>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="email-2fa" data-lesson-id="3" />
+            <span>2. Elektron pochtangizda 2FA'ni yoqing</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> email — ko'pgina boshqa hisoblarni tiklash kaliti, shuning uchun uni birinchi navbatda himoyalash kerak.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> pochta xizmatingiz sozlamalarida "Xavfsizlik" bo'limini toping va ikki bosqichli tasdiqlashni yoqing.</p>
+        </div>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="instagram-2fa" data-lesson-id="3" />
+            <span>3. Instagram yoki boshqa ijtimoiy tarmoqda 2FA'ni yoqing</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> ijtimoiy tarmoq akkauntingizni o'g'irlanishdan himoyalash.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> Sozlamalar → Xavfsizlik → Ikki bosqichli autentifikatsiya bo'limiga kiring va uni yoqing.</p>
+        </div>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="zaxira-kodlar" data-lesson-id="3" />
+            <span>4. Zaxira kodlarni xavfsiz joyga saqlab qo'ying</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> telefon yo'qolganda ham hisobingizdan mahrum bo'lmaslik.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> 2FA yoqilgandan so'ng berilgan zaxira kodlarning skrinshotini oling va uni parol menejeringizga yoki xavfsiz joyga saqlang.</p>
+        </div>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="kod-qoidasi" data-lesson-id="3" />
+            <span>5. Yaqinlaringizga "kodni hech kimga bermang" qoidasini yetkazing</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> oilangizni ham shu turdagi firibgarlikdan asrash.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> ota-ona yoki keksa qarindoshingizga ushbu darsdagi Telegram kod misolini gapirib bering.</p>
+        </div>
+
+        <h3>Mustahkamlash testi</h3>
+        <div id="quiz3"></div>
+
+        <div class="lesson-complete-note" data-lesson-complete-note hidden>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Ushbu dars tugallandi deb belgilandi. Progressingiz saqlandi.
+        </div>
+
+      </article>
+
+      <nav class="lesson-nav" aria-label="Darslar orasida o'tish">
+        <a class="btn btn-outline" href="./dars-2.html">← Oldingi dars</a>
+        <a class="btn btn-primary" href="./dars-4.html">Keyingi dars: Fishing →</a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 Kibersavod. Aholi kibersavodxonligini oshirishga qaratilgan bepul ta'lim loyihasi.</p>
+    <nav aria-label="Qo'shimcha havolalar">
+      <a href="./resurslar.html">Foydali havolalar</a>
+      <a href="./lugat.html">Atamalar lug'ati</a>
+      <a href="./test.html">Yakuniy baholash</a>
+    </nav>
+    <p class="footer-note">Bu sayt hech qanday shaxsiy ma'lumotingizni serverga yubormaydi yoki yig'maydi.</p>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    KiberApp.Quiz.init(document.getElementById("quiz3"), "3", [
+      {
+        q: "2FA (ikki bosqichli autentifikatsiya) nima uchun kerak?",
+        options: [
+          "Tizimga kirishni tezlashtirish uchun",
+          "Parol o'g'irlansa ham hisobga kirishni qiyinlashtirish uchun",
+          "Internetni tezlashtirish uchun",
+          "Faqat kompaniyalar uchun kerak"
+        ],
+        correct: 1,
+        explain: "2FA parolga qo'shimcha ikkinchi tasdiqlash qadamini talab qilib, faqat parol bilishning o'zi yetarli bo'lmasligini ta'minlaydi."
+      },
+      {
+        q: "Quyidagi 2FA turlaridan qaysi biri odatda eng xavfsiz hisoblanadi?",
+        options: [
+          "SMS orqali kod",
+          "Autentifikatsiya ilovasi orqali kod",
+          "Elektron pochta orqali eslatma",
+          "Hech qaysi biri, ular bir xil"
+        ],
+        correct: 1,
+        explain: "Ilova orqali kod SIM swap kabi xavflardan holi bo'lgani uchun SMS kodga qaraganda xavfsizroq hisoblanadi."
+      },
+      {
+        q: "SIM swap firibgarligi nima?",
+        options: [
+          "Telefon dasturini yangilash",
+          "Firibgarning sizning telefon raqamingizni o'z SIM kartasiga ko'chirishga urinishi",
+          "SIM kartani tozalash",
+          "Yangi SIM karta sotib olish"
+        ],
+        correct: 1,
+        explain: "Agar bu muvaffaqiyatli bo'lsa, sizga kelishi kerak bo'lgan SMS kodlar firibgarga boradi."
+      },
+      {
+        q: "Sizga notanish odamdan \"men adashib kod yubordim, qaytarib bering\" degan xabar kelsa, nima qilish kerak?",
+        options: [
+          "Kodni darhol yuborish, chunki u yordam so'ramoqda",
+          "Kodni hech kimga yubormaslik va xabarni e'tiborsiz qoldirish",
+          "Kodni telefon orqali aytib berish",
+          "Kodni ijtimoiy tarmoqda ulashish"
+        ],
+        correct: 1,
+        explain: "Bu — Telegram va boshqa akkauntlarni o'g'irlashning keng tarqalgan usuli. Tasdiqlash kodini hech kimga bermang."
+      },
+      {
+        q: "Zaxira kodlar (backup codes) nima uchun kerak?",
+        options: [
+          "Hisobni butunlay o'chirish uchun",
+          "Telefon yo'qolgan yoki ishlamay qolgan holatda hisobga kirish uchun",
+          "Do'stlaringizga ulashish uchun",
+          "Parolni unutish uchun"
+        ],
+        correct: 1,
+        explain: "Zaxira kodlar telefoningizga kira olmay qolgan taqdiringizda hisobingizni tiklash imkonini beradi."
+      }
+    ]);
+  });
+</script>
+</body>
+</html>

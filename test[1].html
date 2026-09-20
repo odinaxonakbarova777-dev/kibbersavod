@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yakuniy baholash — Kibersavodxonlik indeksi — Kibersavod</title>
+<meta name="description" content="30 savolli yakuniy test orqali Kibersavodxonlik indeksingizni aniqlang va zaif yo'nalishlaringizni bilib oling." />
+<link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Asosiy mazmunga o'tish</a>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a class="brand" href="./index.html">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L3 5.5V11C3 16.25 6.84 21.16 12 22C17.16 21.16 21 16.25 21 11V5.5L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12.2L10.7 14.4L15.5 9.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand-text-full">Kibersavod</span>
+    </a>
+    <button class="icon-btn nav-toggle" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="site-nav">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Asosiy navigatsiya">
+      <a href="./index.html">Bosh sahifa</a>
+      <a href="./darslar.html">Darslar</a>
+      <a href="./test.html" aria-current="page">Baholash</a>
+      <a href="./progress.html">Progress</a>
+      <a href="./lugat.html">Lug'at</a>
+      <a href="./resurslar.html">Resurslar</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Qorong'i rejimga o'tish" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5V5M12 19V21.5M4.2 4.2L6 6M18 18L19.8 19.8M2.5 12H5M19 12H21.5M4.2 19.8L6 18M18 6L19.8 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" data-global-progress-fill></div></div>
+</header>
+
+<main id="main">
+
+  <section class="lesson-hero">
+    <div class="container">
+      <p class="lesson-eyebrow">Yakuniy baholash</p>
+      <h1>Kibersavodxonlik indeksingizni aniqlang</h1>
+      <p style="color:#c2cde3;max-width:56ch;">30 ta savol, 5 ta yo'nalish bo'yicha: parol gigiyenasi, fishingni tanish, to'lov xavfsizligi, ijtimoiy tarmoq va qurilma himoyasi. Test oxirida 0–100 ballik indeks, daraja va zaif yo'nalishlar bo'yicha tavsiyalar olasiz.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="card test-intro-card">
+        <p class="mt-0">Har bir savolga eng to'g'ri deb hisoblagan javobni belgilang. Barcha 30 savolga javob bergandan so'ng, pastdagi <strong>"Natijani hisoblash"</strong> tugmasini bosing.</p>
+      </div>
+
+      <form id="finalTestForm"></form>
+
+      <div id="finalTestResult" class="card test-result-card" hidden></div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 Kibersavod. Aholi kibersavodxonligini oshirishga qaratilgan bepul ta'lim loyihasi.</p>
+    <nav aria-label="Qo'shimcha havolalar">
+      <a href="./resurslar.html">Foydali havolalar</a>
+      <a href="./lugat.html">Atamalar lug'ati</a>
+      <a href="./darslar.html">Barcha darslar</a>
+    </nav>
+    <p class="footer-note">Bu sayt hech qanday shaxsiy ma'lumotingizni serverga yubormaydi yoki yig'maydi. Test natijasi faqat shu qurilmangiz xotirasida saqlanadi.</p>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var questions = [
+      /* --- Parol gigiyenasi (2-3-darslar) --- */
+      { category: "parol", q: "Kuchli parolning eng muhim xususiyati nima?", options: ["Iloji boricha qisqa bo'lishi", "Uzunlik va belgilar xilma-xilligi", "Faqat raqamlardan iborat bo'lishi", "Ismingizdan tuzilgan bo'lishi"], correct: 1 },
+      { category: "parol", q: "Nega bir xil parolni ko'p hisobda ishlatish xavfli?", options: ["Bitta saytning buzilishi barcha hisoblaringizni xavf ostiga qo'yadi", "Bu qonunga zid", "Bu parolni tezroq unutishga olib keladi", "Hech qanday xavfi yo'q"], correct: 0 },
+      { category: "parol", q: "Parol menejeri nima uchun kerak?", options: ["Parollarni internetga ochiq joylash uchun", "Ko'p noyob parolni xavfsiz eslab qolish uchun", "Parolsiz kirish uchun", "Faqat kompaniyalar uchun"], correct: 1 },
+      { category: "parol", q: "2FA (ikki bosqichli autentifikatsiya) nima uchun kerak?", options: ["Kirishni tezlashtirish uchun", "Parol o'g'irlansa ham hisobga kirishni qiyinlashtirish uchun", "Internetni tezlashtirish uchun", "Faqat administratorlar uchun"], correct: 1 },
+      { category: "parol", q: "SIM swap firibgarligi nima?", options: ["Yangi SIM karta sotib olish", "Firibgarning telefon raqamingizni o'z SIM kartasiga ko'chirishga urinishi", "SIM kartani tozalash dasturi", "Telefon dasturini yangilash"], correct: 1 },
+      { category: "parol", q: "Zaxira kodlar (backup codes) nima uchun saqlanadi?", options: ["Do'stlarga ulashish uchun", "Telefon yo'qolganda hisobga kirish imkonini saqlash uchun", "Parolni unutish uchun", "Hisobni o'chirish uchun"], correct: 1 },
+
+      /* --- Fishingni tanish (4-5-darslar) --- */
+      { category: "fishing", q: "Fishing (phishing) nima?", options: ["Kompyuter virusining turi", "Ishonchli tashkilot niqobida ma'lumot o'g'irlash usuli", "Internetni tezlashtiruvchi dastur", "Rasmiy bank xabari turi"], correct: 1 },
+      { category: "fishing", q: "Quyidagilardan qaysi biri soxta domenga misol bo'la oladi?", options: ["click.uz", "click-bonus-verify.info", "gov.uz", "mail.ru"], correct: 1 },
+      { category: "fishing", q: "Haqiqiy bank yoki davlat xizmati telefon orqali nimani so'ramaydi?", options: ["Ism-familiyangizni", "SMS kod yoki karta CVV kodini", "Murojaat sababini", "Aloqa uchun email manzilingizni"], correct: 1 },
+      { category: "fishing", q: "Fishing xabarlari odatda qaysi hissiyotga tayanadi?", options: ["Zerikish", "Qo'rquv, shoshilinchlik yoki ochko'zlik", "Charchoq", "Qiziqishsizlik"], correct: 1 },
+      { category: "fishing", q: "\"Bu haqda hech kimga aytmang\" degan so'zlar odatda nimadan dalolat beradi?", options: ["Qonuniy talab", "Ko'pincha firibgarlik belgisi", "Odob-axloq qoidasi", "Hech qanday ahamiyati yo'q"], correct: 1 },
+      { category: "fishing", q: "Shubhali qo'ng'iroq kelganda eng to'g'ri qadam qaysi?", options: ["Darhol so'ralgan ma'lumotni berish", "Suhbatni to'xtatib, rasmiy raqamga o'zingiz qayta qo'ng'iroq qilish", "Pul o'tkazib, keyin tekshirish", "Qo'ng'iroqni boshqalarga ulashish"], correct: 1 },
+
+      /* --- To'lov xavfsizligi (6-dars) --- */
+      { category: "tolov", q: "Qaysi ikkita ma'lumot birga qo'shilganda kartangizdan pul yechish imkonini beradi?", options: ["Karta raqami va amal qilish muddati", "CVV kodi va SMS tasdiqlash kodi", "Ism-familiya va karta raqami", "Faqat karta raqami"], correct: 1 },
+      { category: "tolov", q: "Click, Payme yoki Uzum orqali to'lov qilishda nimaga e'tibor berish kerak?", options: ["Faqat summaga", "Ilovani rasmiy manbadan yuklab olish va oluvchini tekshirish", "Hech narsaga", "Faqat internet tezligiga"], correct: 1 },
+      { category: "tolov", q: "Kunlik xarid limitini o'rnatishning foydasi nimada?", options: ["Bank komissiyasini kamaytiradi", "Karta ma'lumotlari o'g'irlansa ham zararni cheklaydi", "Internetni tezlashtiradi", "Hech qanday foydasi yo'q"], correct: 1 },
+      { category: "tolov", q: "Karta o'g'irlangan yoki shubhali tranzaksiya ko'rilganda birinchi qadam qaysi?", options: ["Kutish", "Darhol bankka murojaat qilib kartani bloklash", "Ijtimoiy tarmoqda yozish", "Yangi karta uchun navbatga yozilish"], correct: 1 },
+      { category: "tolov", q: "SMS yoki push xabarnomani yoqishning foydasi nimada?", options: ["Telefonni bezaydi", "Har bir tranzaksiyani real vaqtda kuzatish imkonini beradi", "Batareyani tejaydi", "Hech qanday foydasi yo'q"], correct: 1 },
+      { category: "tolov", q: "Karta rasmini (raqami ko'rinadigan) ijtimoiy tarmoqqa joylash nega xavfli?", options: ["Xavfli emas", "Karta ma'lumotlari boshqalar qo'liga o'tishi mumkin", "Faqat estetik muammo", "Bu hech qachon sodir bo'lmaydi"], correct: 1 },
+
+      /* --- Ijtimoiy tarmoq (7-8-darslar) --- */
+      { category: "ijtimoiy", q: "Firibgarlar uchun o'g'irlangan ijtimoiy tarmoq akkauntida eng qimmatli narsa nima?", options: ["Profil surati", "Tanishlar ro'yxati va ularning ishonchi", "Akkaunt yaratilgan sana", "Profil rangi"], correct: 1 },
+      { category: "ijtimoiy", q: "\"Faol seanslar\" bo'limi nima uchun kerak?", options: ["Dizayn uchun", "Notanish qurilma/joydan kirishlarni aniqlash uchun", "Internetni tezlashtirish uchun", "Hech qanday ahamiyati yo'q"], correct: 1 },
+      { category: "ijtimoiy", q: "Do'stingiz nomidan shoshilinch pul so'ralsa, to'g'ri qadam qaysi?", options: ["Darhol pul o'tkazish", "Boshqa kanal orqali so'rovni tasdiqlash", "E'tiborsiz qoldirish", "Boshqalarga ulashish"], correct: 1 },
+      { category: "ijtimoiy", q: "\"Raqamli iz\" (digital footprint) nima?", options: ["Faqat IP manzilingiz", "Internetda qoldirgan barcha ma'lumotlar izi", "Kompyuterdagi fayllar", "Bank tranzaksiyalari tarixi"], correct: 1 },
+      { category: "ijtimoiy", q: "Sayohatda joylashuvni real vaqtda ulashish nega xavfli bo'lishi mumkin?", options: ["Batareyani tugatadi", "Uyingiz bo'sh ekanini bildirishi mumkin", "Internetni sekinlashtiradi", "Hech qanday xavfi yo'q"], correct: 1 },
+      { category: "ijtimoiy", q: "Ilovalarga ruxsat berishda qanday qoidaga amal qilish tavsiya etiladi?", options: ["Barcha ruxsatlarni berish", "Faqat zarur ruxsatlarni berish", "Hech qanday ruxsat bermaslik", "E'tibor bermaslik"], correct: 1 },
+
+      /* --- Qurilma va tarmoq himoyasi (9-10-darslar) --- */
+      { category: "qurilma", q: "To'lov talab qiluvchi dastur (ransomware) nima qiladi?", options: ["Kompyuterni tezlashtiradi", "Fayllarni shifrlab, to'lov talab qiladi", "Internetni bepul qiladi", "Faqat reklama ko'rsatadi"], correct: 1 },
+      { category: "qurilma", q: "Zararli dastur ko'pincha qanday yuqadi?", options: ["Elektr energiyasi orqali", "Notanish saytlardan \"crack\" dastur yuklab olish orqali", "Yangi telefon sotib olganda", "Umuman yuqmaydi"], correct: 1 },
+      { category: "qurilma", q: "Tizim yangilanishlarini o'z vaqtida o'rnatish nega muhim?", options: ["Telefonni chiroyli qiladi", "Ma'lum xavfsizlik zaifliklarini yopadi", "Batareyani tejaydi", "Ahamiyati yo'q"], correct: 1 },
+      { category: "qurilma", q: "\"Evil twin\" firibgarligi nima?", options: ["Virus turi", "Haqiqiy tarmoqqa o'xshash soxta Wi-Fi hotspot", "Router modeli", "VPN turi"], correct: 1 },
+      { category: "qurilma", q: "Router admin parolini almashtirmaslik nega xavfli?", options: ["Xavfi yo'q", "Standart parol ma'lum bo'lgani uchun ruxsatsiz kirish osonlashadi", "Internetni sekinlashtiradi", "Faqat estetik muammo"], correct: 1 },
+      { category: "qurilma", q: "Ommaviy Wi-Fi orqali nima qilishdan saqlanish tavsiya etiladi?", options: ["Xabar o'qish", "Bank ilovasiga kirish yoki to'lov qilish", "Yangiliklar o'qish", "Ob-havo tekshirish"], correct: 1 }
+    ];
+
+    KiberApp.FinalTest.init(
+      document.getElementById("finalTestForm"),
+      document.getElementById("finalTestResult"),
+      questions
+    );
+  });
+</script>
+</body>
+</html>

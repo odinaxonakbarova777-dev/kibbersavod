@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2-dars: Kuchli parol va parol menejeri — Kibersavod</title>
+<meta name="description" content="Kuchli parol qanday tuziladi, nega har bir hisob uchun alohida parol kerak va parol menejeridan qanday foydalanish mumkin." />
+<link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Asosiy mazmunga o'tish</a>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a class="brand" href="./index.html">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L3 5.5V11C3 16.25 6.84 21.16 12 22C17.16 21.16 21 16.25 21 11V5.5L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12.2L10.7 14.4L15.5 9.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand-text-full">Kibersavod</span>
+    </a>
+    <button class="icon-btn nav-toggle" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="site-nav">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Asosiy navigatsiya">
+      <a href="./index.html">Bosh sahifa</a>
+      <a href="./darslar.html" aria-current="page">Darslar</a>
+      <a href="./test.html">Baholash</a>
+      <a href="./progress.html">Progress</a>
+      <a href="./lugat.html">Lug'at</a>
+      <a href="./resurslar.html">Resurslar</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Qorong'i rejimga o'tish" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5V5M12 19V21.5M4.2 4.2L6 6M18 18L19.8 19.8M2.5 12H5M19 12H21.5M4.2 19.8L6 18M18 6L19.8 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" data-global-progress-fill></div></div>
+</header>
+
+<main id="main">
+
+  <section class="lesson-hero">
+    <div class="container">
+      <p class="lesson-eyebrow">2-dars / 12</p>
+      <h1>Kuchli parol va parol menejeri</h1>
+      <ul class="objectives-list">
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Kuchli parolning to'rtta asosiy belgisini bilib olasiz</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Nega har bir hisob uchun alohida parol kerakligini tushunasiz</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Parol menejeri nima va u qanday yordam berishini bilasiz</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>O'z parolingizni sinab ko'rasiz va kuchsiz bo'lsa, yaxshilash yo'llarini bilasiz</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="lesson-body">
+
+        <h2>Nega oddiy parol endi yetarli emas</h2>
+        <p>O'nlab yillar oldin sakkiz belgidan iborat parol yetarlicha xavfsiz hisoblangan. Bugun esa kompyuterlar shu qadar kuchayganki, qisqa va oddiy parollarni soniyalar ichida "taxmin qilib topish" mumkin. Firibgarlar buni maxsus dasturlar yordamida, sizning ismingiz, tug'ilgan yilingiz yoki eng ommabop parollar ro'yxatidan foydalanib amalga oshiradi.</p>
+        <p>Ayni paytda parol — sizning bank hisobingiz, Telegram akkauntingiz va elektron pochtangizga birinchi va ko'pincha yagona qulfdir. Shu sababli parolni jiddiy qabul qilish kerak — xuddi uy kalitini notanish odamga bermaganingizdek.</p>
+
+        <h2>Kuchli parolning to'rtta belgisi</h2>
+        <p>Kuchli parol quyidagi to'rtta xususiyatga ega bo'lishi kerak:</p>
+        <ol>
+          <li><strong>Uzunlik.</strong> Kamida 12, imkon bo'lsa 14–16 belgi. Har bir qo'shimcha belgi parolni bir necha barobar mustahkamlaydi.</li>
+          <li><strong>Xilma-xillik.</strong> Katta va kichik harflar, raqamlar hamda maxsus belgilar (!, ?, %, # kabi) aralash bo'lishi.</li>
+          <li><strong>Taxmin qilib bo'lmaslik.</strong> Ismingiz, tug'ilgan sana, telefon raqami yoki "parol123" kabi mashhur kombinatsiyalardan foydalanmaslik.</li>
+          <li><strong>Noyoblik.</strong> Har bir muhim hisob uchun alohida, boshqa joyda ishlatilmagan parol.</li>
+        </ol>
+
+        <h2>"Parol iborasi" — eslab qolish oson usul</h2>
+        <p>Ko'p odamlar "qanday qilib shuncha murakkab parolni eslab qolaman" deb qiynaladi. Buning yechimi — parol iborasi (passphrase) usuli: bir-biriga bog'liq bo'lmagan 3–4 ta so'zni birlashtirib, orasiga raqam yoki belgi qo'shish. Masalan, "Anor-Kabutar-7Bulut!" kabi ibora "P@rol1" kabi qisqa parolga qaraganda ham eslab qolish oson, ham ancha kuchli bo'ladi, chunki u ancha uzun.</p>
+        <p>Muhim qoida: iborangizda haqiqiy shaxsiy ma'lumot (uy manzilingiz, farzandingiz ismi, tug'ilgan yilingiz) ishlatmang — bularni ijtimoiy tarmoqlaringizdan bilib olish qiyin emas.</p>
+
+        <h2>Nega bitta parolni hamma joyda ishlatish xavfli</h2>
+        <p>Tasavvur qiling: siz bitta arzon onlayn do'kon saytida ro'yxatdan o'tasiz va u yerda ham, bank ilovangizda ham bir xil parolni ishlatasiz. Agar o'sha kichik sayt xavfsizligi buzilsa (bunday holatlar tez-tez sodir bo'ladi), firibgarlar sizning email va parolingizni olib, xuddi shu kombinatsiyani bank, Telegram va boshqa xizmatlarda "sinab ko'rishadi". Bu usul "credential stuffing" deb ataladi va u ayni shu — bitta parolni ko'p joyda ishlatish — tufayli ishlaydi.</p>
+        <p>Shuning uchun eng muhim qoida: <strong>har bir muhim hisob — bank, email, Telegram — o'zining noyob paroliga ega bo'lishi kerak.</strong></p>
+
+        <h2>Parol menejeri nima va u qanday yordam beradi</h2>
+        <p>O'nlab noyob va murakkab parolni yodda saqlash inson uchun deyarli imkonsiz. Aynan shu muammoni parol menejeri (password manager) hal qiladi — bu barcha parollaringizni bitta kuchli "bosh parol" ostida shifrlab saqlaydigan maxsus dastur. Siz faqat bitta bosh parolni eslab qolasiz, qolganlarini dastur o'zi eslab qoladi va kerak bo'lganda avtomatik to'ldiradi.</p>
+        <p>Ko'pgina zamonaviy brauzerlar (Chrome, Safari, Edge) ham o'zining sodda, bepul parol menejeriga ega — bu yaxshi boshlang'ich nuqta. Agar ko'proq imkoniyat kerak bo'lsa, Bitwarden yoki shunga o'xshash alohida ilovalardan foydalanish mumkin. Muhimi — parollarni telefon eslatmasi yoki qog'ozga ochiq matnda emas, maxsus himoyalangan joyda saqlash.</p>
+
+        <h2>Parolni qayerda saqlamaslik kerak</h2>
+        <p>Parolni telefonning oddiy "Eslatmalar" ilovasiga, Word faylga yoki Telegram'dagi "O'zim bilan xabarlashish" bo'limiga yozib qo'yish — keng tarqalgan, lekin xavfli odat. Agar telefoningiz yo'qolsa yoki akkauntingiz buzilsa, barcha parollaringiz bir zumda ochiq bo'lib qoladi. Qog'ozga yozib, uyda ko'z ilg'amaydigan joyda saqlash parol menejeriga qaraganda ancha xavfliroq, ammo hech qanday himoyasiz saqlashdan ko'ra biroz yaxshiroq — asosiy maqsad esa asta-sekin parol menejeriga o'tishdir.</p>
+
+        <h3>Hayotiy misol</h3>
+        <div class="example-box">
+          <p><strong>Vaziyat:</strong> Aziz aka barcha joyda — elektron pochta, Telegram, hatto bank ilovasida ham — "Tashkent2020" degan bitta parolni ishlatadi, chunki uni eslab qolish oson.</p>
+          <p>Bir kuni u ro'yxatdan o'tgan kichik onlayn do'kon sayti buzib kiriladi va foydalanuvchilar ma'lumotlari, jumladan Aziz akaning email va paroli, internetga tarqaladi. Bir necha kundan so'ng uning Telegram akkaunti begona qurilmadan ochiladi va tanishlariga "qarz bering" degan xabarlar yubora boshlaydi.</p>
+          <p class="text-soft">Agar Aziz aka har bir hisob uchun alohida parol ishlatganida, bitta saytning buzilishi qolgan hisoblariga ta'sir qilmagan bo'lardi.</p>
+        </div>
+
+        <h3>Parolingizni sinab ko'ring</h3>
+        <div class="pw-checker">
+          <label for="pwInput">Parolingizni (yoki sinov uchun o'xshash parolni) kiriting</label>
+          <div class="pw-checker__row">
+            <input type="password" id="pwInput" autocomplete="off" placeholder="Masalan: Anor-Kabutar-7Bulut!" />
+            <span class="pw-checker__toggle">
+              <input type="checkbox" id="pwToggle" />
+              <label for="pwToggle" style="margin:0;font-weight:500;">Ko'rsatish</label>
+            </span>
+          </div>
+          <div class="pw-meter"><div class="pw-meter__fill" id="pwMeterFill"></div></div>
+          <span class="pw-result-label" id="pwLabel">Parol kiriting</span>
+          <ul class="pw-tips" id="pwTips"></ul>
+          <div class="pw-privacy-note">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L3 5.5V11C3 16.25 6.84 21.16 12 22C17.16 21.16 21 16.25 21 11V5.5L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Bu yerga kiritilgan parol hech qayerga yuborilmaydi — barcha tekshiruv aynan shu brauzeringiz ichida, internetga ulanmasdan amalga oshadi.
+          </div>
+        </div>
+
+        <h3>Xato qilmang</h3>
+        <div class="mistake-box">
+          <p><strong>Eng ko'p uchraydigan 5 ta xato:</strong></p>
+          <ol>
+            <li>Ism, tug'ilgan yil yoki telefon raqamidan parol yasash.</li>
+            <li>Barcha yoki ko'pgina hisoblarda bitta parolni qayta-qayta ishlatish.</li>
+            <li>Parolni telefon eslatmasiga yoki xabar yozishmalariga ochiq matnda saqlash.</li>
+            <li>Faqat oxirgi raqamini o'zgartirib parolni "yangilash" (masalan, Parol1 → Parol2).</li>
+            <li>Parolni do'st, hamkasb yoki "ishonchli" notanish odamga aytib berish.</li>
+          </ol>
+        </div>
+
+        <h3>Amaliy topshiriqlar</h3>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="pw-sinov" data-lesson-id="2" />
+            <span>1. Eng ko'p ishlatadigan parolingizga o'xshash parolni tekshirgichda sinab ko'ring</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> parolingiz qanchalik kuchli ekanini bilish.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> yuqoridagi maydonga haqiqiy parolingiz emas, unga o'xshash namunani kiriting va natijani ko'ring.</p>
+        </div>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="bank-parol" data-lesson-id="2" />
+            <span>2. Bank ilovangiz uchun yangi, noyob parol o'rnating</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> eng muhim hisobingizni birinchi navbatda himoyalash.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> Bank ilovasi → Sozlamalar → Parolni o'zgartirish bo'limiga kirib, parol iborasi usulida yangi parol yarating.</p>
+        </div>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="parol-menejeri" data-lesson-id="2" />
+            <span>3. Brauzeringiz yoki telefoningizdagi parol menejerini yoqing</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> parollarni eslab qolish yukini o'zingizdan olib tashlash.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> Chrome/Safari sozlamalari → Parollar bo'limiga kirib, avtomatik saqlash va taklif qilishni yoqing.</p>
+        </div>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="3-parol-almashtirish" data-lesson-id="2" />
+            <span>4. Kamida 3 ta hisobingiz uchun turli parollar yarating</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> bitta saytning buzilishi qolgan hisoblarga ta'sir qilmasligini ta'minlash.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> email, Telegram va yana bitta muhim hisobingiz uchun har biriga alohida parol iborasi tuzing.</p>
+        </div>
+
+        <div class="task-box">
+          <label>
+            <input type="checkbox" data-task-checkbox="eski-parollar-royxati" data-lesson-id="2" />
+            <span>5. Eski, oddiy parollaringiz ro'yxatini tuzing</span>
+          </label>
+          <p class="text-soft"><strong>Maqsad:</strong> qaysi hisoblar birinchi navbatda yangilanishi kerakligini rejalashtirish.</p>
+          <p class="text-soft"><strong>Qadamlar:</strong> qaysi hisoblarda hali ham eski yoki takrorlanuvchi parol borligini yozib chiqing va haftalik almashtirish rejasi tuzing.</p>
+        </div>
+
+        <h3>Mustahkamlash testi</h3>
+        <div id="quiz2"></div>
+
+        <div class="lesson-complete-note" data-lesson-complete-note hidden>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12L9 17L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Ushbu dars tugallandi deb belgilandi. Progressingiz saqlandi.
+        </div>
+
+      </article>
+
+      <nav class="lesson-nav" aria-label="Darslar orasida o'tish">
+        <a class="btn btn-outline" href="./dars-1.html">← Oldingi dars</a>
+        <a class="btn btn-primary" href="./dars-3.html">Keyingi dars: 2FA →</a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 Kibersavod. Aholi kibersavodxonligini oshirishga qaratilgan bepul ta'lim loyihasi.</p>
+    <nav aria-label="Qo'shimcha havolalar">
+      <a href="./resurslar.html">Foydali havolalar</a>
+      <a href="./lugat.html">Atamalar lug'ati</a>
+      <a href="./test.html">Yakuniy baholash</a>
+    </nav>
+    <p class="footer-note">Bu sayt hech qanday shaxsiy ma'lumotingizni serverga yubormaydi yoki yig'maydi.</p>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    KiberApp.PasswordChecker.init(
+      document.getElementById("pwInput"),
+      document.getElementById("pwMeterFill"),
+      document.getElementById("pwLabel"),
+      document.getElementById("pwTips"),
+      document.getElementById("pwToggle")
+    );
+
+    KiberApp.Quiz.init(document.getElementById("quiz2"), "2", [
+      {
+        q: "Kuchli parol uchun eng muhim xususiyatlardan biri qaysi?",
+        options: [
+          "Faqat raqamlardan iborat bo'lishi",
+          "Kamida 12 belgidan iborat va xilma-xil belgilarni o'z ichiga olishi",
+          "Ismingiz va tug'ilgan yilingizdan tuzilgan bo'lishi",
+          "Iloji boricha qisqa bo'lishi, eslab qolish oson bo'lishi uchun"
+        ],
+        correct: 1,
+        explain: "Uzunlik va belgilar xilma-xilligi parolni taxmin qilishni ancha qiyinlashtiradi."
+      },
+      {
+        q: "\"Parol iborasi\" (passphrase) usuli nimadan iborat?",
+        options: [
+          "Bir so'zni takrorlashdan",
+          "Bir-biriga bog'liq bo'lmagan bir necha so'zni birlashtirishdan",
+          "Faqat familiyangizdan foydalanishdan",
+          "Klaviaturadagi ketma-ket tugmalardan (qwerty)"
+        ],
+        correct: 1,
+        explain: "Bir necha bog'liq bo'lmagan so'zdan iborat ibora ham uzun, ham eslab qolish oson bo'ladi."
+      },
+      {
+        q: "Nega har bir muhim hisob uchun alohida parol kerak?",
+        options: [
+          "Chunki bitta saytning buzilishi boshqa hisoblaringizga ta'sir qilmasligi uchun",
+          "Chunki bu qonun talabi",
+          "Chunki brauzer shuni talab qiladi",
+          "Buning ahamiyati yo'q"
+        ],
+        correct: 0,
+        explain: "Agar bitta parolni hamma joyda ishlatsangiz, bitta sayt buzilishi bilan barcha hisoblaringiz xavf ostida qoladi."
+      },
+      {
+        q: "Parol menejeri nima uchun kerak?",
+        options: [
+          "Parollarni internetga ochiq joylash uchun",
+          "Ko'p sonli noyob parollarni xavfsiz eslab qolish va avtomatik to'ldirish uchun",
+          "Parolsiz kirish imkonini berish uchun",
+          "Faqat kompaniyalar uchun kerak"
+        ],
+        correct: 1,
+        explain: "Parol menejeri barcha noyob parollaringizni shifrlab saqlaydi, sizga esa faqat bitta bosh parolni eslab qolish qoladi."
+      },
+      {
+        q: "Parolni saqlash uchun eng xavfli joy qaysi?",
+        options: [
+          "Ishonchli parol menejeri ilovasi",
+          "Brauzerning o'rnatilgan parol menejeri",
+          "Telefondagi oddiy \"Eslatmalar\" ilovasida ochiq matnda",
+          "Xotirada"
+        ],
+        correct: 2,
+        explain: "Ochiq matnli eslatmalar telefon yo'qolsa yoki buzilsa darhol ochiladi — bu eng xavfli usul."
+      }
+    ]);
+  });
+</script>
+</body>
+</html>
